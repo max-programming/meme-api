@@ -23,13 +23,13 @@ Node, Puppeteer, Fastify
 #### Get all memes
 
 ```http
-  GET /memes
+GET /memes
 ```
 
 #### Get a random meme
 
 ```http
-  GET /random
+GET /random
 ```
 
 ## Feedback
