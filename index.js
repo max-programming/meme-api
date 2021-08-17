@@ -20,19 +20,14 @@ async function getAllMemes() {
   );
 
   const imgs = allImages.filter(img => img !== null);
-
+  await browser.close();
   return imgs;
 }
 
 fastify.get('/', async (request, reply) => {
   const memes = await getAllMemes();
-  reply.send({ memes });
-});
-
-fastify.get('/random', async (request, reply) => {
-  const memes = await getAllMemes();
   const randomNumber = Math.round(Math.random() * memes.length);
-  reply.send({ randomMeme: memes[randomNumber] });
+  reply.send(memes[randomNumber]);
 });
 
 const start = async () => {
