@@ -24,12 +24,12 @@ async function getAllMemes() {
   return imgs;
 }
 
-fastify.get('/memes', async (request, reply) => {
+fastify.get('/', async (request, reply) => {
   const memes = await getAllMemes();
   reply.send({ memes });
 });
 
-fastify.get('/', async (request, reply) => {
+fastify.get('/random', async (request, reply) => {
   const memes = await getAllMemes();
   const randomNumber = Math.round(Math.random() * memes.length);
   reply.send({ randomMeme: memes[randomNumber] });
