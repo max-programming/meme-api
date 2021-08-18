@@ -20,16 +20,10 @@ Node, Puppeteer, Fastify
 
 ## API Reference
 
-#### Get all memes
-
-```http
-GET /memes
-```
-
 #### Get a random meme
 
 ```http
-GET /random
+GET /
 ```
 
 ## Feedback
